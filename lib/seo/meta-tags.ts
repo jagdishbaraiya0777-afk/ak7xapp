@@ -14,10 +14,10 @@ export class MetaTagGenerator {
   private readonly logoUrl: string;
 
   constructor(
-    siteUrl: string = 'https://ak7-apk.com',
-    siteName: string = 'Ak7xapp',
-    organizationName: string = 'Ak7xapp',
-    logoUrl: string = 'https://ak7-apk.com/logo.png'
+    siteUrl: string = 'https://ak7x.games',
+    siteName: string = 'ak7x App',
+    organizationName: string = 'ak7x App',
+    logoUrl: string = 'https://ak7x.games/icon-512.png'
   ) {
     this.siteUrl = siteUrl;
     this.siteName = siteName;

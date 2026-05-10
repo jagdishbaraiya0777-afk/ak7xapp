@@ -13,13 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ak7xapp.com"),
+  metadataBase: new URL("https://ak7x.games"),
   title: {
-    default: "ak7x App",
+    default: "ak7x App — Download ak7x APK | ak7x Games",
     template: "%s | ak7x App",
   },
   description:
-    "ak7x App gives mobile players a faster, cleaner Android experience with secure access and easy navigation.",
+    "Download the ak7x app for Android. Get the official ak7x APK, play ak7x games, and enjoy fast secure access. Free ak7x app download in minutes.",
+  alternates: {
+    canonical: "/",
+  },
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -30,18 +33,19 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
-    title: "ak7x App",
+    title: "ak7x App — Download ak7x APK | ak7x Games",
     description:
-      "Fast Android access for ak7x players with smooth navigation and secure login tools.",
-    url: "/",
+      "Download the ak7x app for Android with secure access, fast navigation, and smooth gameplay.",
+    url: "https://ak7x.games",
     siteName: "ak7x App",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ak7x App",
+    title: "ak7x App — Download ak7x APK | ak7x Games",
     description:
-      "Fast Android access for ak7x players with smooth navigation and secure login tools.",
+      "Download the ak7x app for Android with secure access, fast navigation, and smooth gameplay.",
   },
 };
 

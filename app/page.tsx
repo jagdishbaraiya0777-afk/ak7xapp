@@ -1,6 +1,32 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from '@/components/Header';
+import { HomepageSchema } from "@/components/HomepageSchema";
+
+export const metadata: Metadata = {
+  title: "ak7x App — Download ak7x APK | ak7x Games",
+  description:
+    "Download the ak7x app for Android. Get the official ak7x APK, play ak7x games, and enjoy fast secure access. Free ak7x app download — install in minutes.",
+  alternates: {
+    canonical: "https://ak7x.games",
+  },
+  openGraph: {
+    title: "ak7x App — Download ak7x APK | ak7x Games",
+    description:
+      "Download the ak7x app for Android. Get the official ak7x APK, play ak7x games, and enjoy fast secure access. Free ak7x app download — install in minutes.",
+    url: "https://ak7x.games",
+    siteName: "ak7x App",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ak7x App — Download ak7x APK | ak7x Games",
+    description:
+      "Download the ak7x app for Android. Get the official ak7x APK, play ak7x games, and enjoy fast secure access. Free ak7x app download — install in minutes.",
+  },
+};
 
 export default function Home() {
   const features = [
@@ -29,6 +55,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(255,201,87,0.16),transparent_35%),linear-gradient(180deg,#0b1020_0%,#111827_45%,#050816_100%)] text-white">
+      <HomepageSchema />
       <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 lg:px-8">
         <Header />
 
@@ -41,19 +68,17 @@ export default function Home() {
                 </div>
                 <Image
                   src="/icon-512.png"
-                  alt="ak7x App logo"
+                  alt="ak7x App official logo"
                   width={320}
                   height={320}
                   priority
                   className="h-72 w-72 rounded-[2.5rem] border border-white/10 bg-white/5 p-3 shadow-2xl shadow-black/30 sm:h-80 sm:w-80 md:h-96 md:w-96"
                 />
                 <Link
-                  href="https://cp7.me/BYPZW8/30i50zd"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/download"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-6 text-sm font-bold text-slate-950 shadow-lg shadow-orange-500/30 transition-transform hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/40"
                 >
-                  Download APK
+                  Download ak7x APK
                 </Link>
                 <Link
                   href="/blog"
@@ -66,7 +91,7 @@ export default function Home() {
               <div className="space-y-5">
                 <div className="space-y-3">
                   <h1 className="max-w-xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                    ak7x App for fast mobile access in Mexico
+                    Download ak7x App — Free APK for Android
                   </h1>
                   <p className="max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
                     A cleaner Android experience for players who want quicker
@@ -201,8 +226,101 @@ export default function Home() {
           </div>
         </section>
 
+        <section aria-label="About ak7x App" className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 pb-8 text-white/85 backdrop-blur">
+          <h2 className="text-2xl font-black text-white">What is the ak7x App?</h2>
+          <p className="mt-4 text-sm leading-8 sm:text-base">
+            The <strong>ak7x app</strong> is a fast, lightweight Android application designed for players who want quick mobile access to their favourite games. Whether you are searching for the <strong>ak7x game</strong>, exploring <strong>ak7x games</strong>, or looking for a reliable <strong>ak7x app download</strong>, this is your official resource hub.
+          </p>
+          <p className="mt-4 text-sm leading-8 sm:text-base">
+            Built for Android, the app delivers a clean interface, secure account control, and smooth navigation for daily use. Players use the <strong>ak7x app</strong> to move quickly between wallet access, promotions, and games without the delays of a browser session.
+          </p>
+        </section>
+
+        <section aria-label="How to download ak7x APK" className="mt-6 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 pb-8 text-white/85 backdrop-blur">
+          <h2 className="text-2xl font-black text-white">How to Complete Your ak7x APK Download</h2>
+          <p className="mt-4 text-sm leading-8 sm:text-base">
+            Getting started with the <strong>ak7x apk download</strong> takes less than five minutes on Android devices:
+          </p>
+          <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-8 sm:text-base">
+            <li><strong>Step 1 — Download the APK:</strong> Tap the official Download button on this page to get the latest <strong>ak7x app download</strong> file directly to your device.</li>
+            <li><strong>Step 2 — Allow installation:</strong> Go to Settings, then Security, and enable installs from your browser or file manager as a one-time step for APK installs outside the Play Store.</li>
+            <li><strong>Step 3 — Install and open:</strong> Open the downloaded file, tap Install, and wait for the <strong>ak7x game</strong> app icon to appear on your home screen.</li>
+            <li><strong>Step 4 — Sign in and play:</strong> Log in with your account or register a new one. Your wallet, promotions, and <strong>ak7x games</strong> are all available from the main dashboard.</li>
+          </ol>
+        </section>
+
+        <section aria-label="ak7x App features" className="mt-6 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 pb-8 text-white/85 backdrop-blur">
+          <h2 className="text-2xl font-black text-white">ak7x App Features</h2>
+          <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-8 sm:text-base">
+            <li><strong>Fast APK install</strong> — lightweight file and quick setup on most Android devices</li>
+            <li><strong>Secure account control</strong> — safe login with a clean, reliable interface</li>
+            <li><strong>Wallet access</strong> — check balance and manage funds from the app dashboard</li>
+            <li><strong>Promotions hub</strong> — view active offers and bonuses without opening a browser</li>
+            <li><strong>Smooth navigation</strong> — mobile-first layout keeps every section one tap away</li>
+            <li><strong>Regular updates</strong> — consistent performance improvements across supported devices</li>
+          </ul>
+        </section>
+
+        <section aria-label="Frequently Asked Questions" className="mt-6 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 pb-8 text-white/85 backdrop-blur">
+          <h2 className="text-2xl font-black text-white">Frequently Asked Questions</h2>
+
+          <div className="mt-4" itemScope itemType="https://schema.org/Question">
+            <h3 className="text-lg font-bold text-white" itemProp="name">What is the ak7x game?</h3>
+            <div itemScope itemType="https://schema.org/Answer">
+              <p className="mt-2 text-sm leading-8 sm:text-base" itemProp="text">
+                The ak7x game is an online gaming platform available as a mobile app for Android devices. Players use the ak7x app to access games, manage their wallet, and join promotions through a clean interface.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4" itemScope itemType="https://schema.org/Question">
+            <h3 className="text-lg font-bold text-white" itemProp="name">Is the ak7x APK download safe?</h3>
+            <div itemScope itemType="https://schema.org/Answer">
+              <p className="mt-2 text-sm leading-8 sm:text-base" itemProp="text">
+                Yes. Download the ak7x APK only from this official page. Always avoid third-party mirrors when downloading any APK.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4" itemScope itemType="https://schema.org/Question">
+            <h3 className="text-lg font-bold text-white" itemProp="name">Which Android version is needed for the ak7x app?</h3>
+            <div itemScope itemType="https://schema.org/Answer">
+              <p className="mt-2 text-sm leading-8 sm:text-base" itemProp="text">
+                The ak7x app is compatible with Android 5.0 and above and runs smoothly on most mid-range devices.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4" itemScope itemType="https://schema.org/Question">
+            <h3 className="text-lg font-bold text-white" itemProp="name">How do I update the ak7x app?</h3>
+            <div itemScope itemType="https://schema.org/Answer">
+              <p className="mt-2 text-sm leading-8 sm:text-base" itemProp="text">
+                Visit this page to check for the latest ak7x APK version, download the new file, and install it over your current app version.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 py-6 text-sm text-white/55">
-          ak7x App - Copyright © 2026
+          <p>ak7x App - Copyright © 2026</p>
+          <p className="mt-3">
+            <strong className="text-white/80">Our platforms:</strong>{' '}
+            <a href="https://ak7-apk.com/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+              ak7 APK
+            </a>{' '}
+            ·{' '}
+            <a href="https://goplay11-apk.com/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+              GoPlay11 Fantasy App
+            </a>{' '}
+            ·{' '}
+            <a href="https://habetapk.com/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+              Habet App
+            </a>{' '}
+            ·{' '}
+            <a href="https://www.dhan7.xyz/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+              Dhan7
+            </a>
+          </p>
         </footer>
       </main>
     </div>

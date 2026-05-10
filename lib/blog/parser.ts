@@ -6,8 +6,6 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import DOMPurify from 'isomorphic-dompurify';
-import { BacklinkManager } from '@/lib/blog/backlinks';
-import type { BacklinkStrategy } from '@/types/blog';
 import type { BlogMetadata, BlogContent, TOCItem } from '@/types/blog';
 
 export interface ContentManagementSystemConfig {
@@ -39,55 +37,10 @@ export class ContentManagementSystem {
       // Extract metadata from frontmatter
       const metadata = this.extractFrontmatter(data, filePath);
       
-      // Insert backlinks into markdown content (per-blog)
-      let backlinks: any[] = [];
-      // mutable content holder so we can update with backlinks
-      let content: string | undefined = undefined;
-
-      try {
-        // Choose a reasonable default strategy based on category if present in frontmatter
-        const defaultStrategy: BacklinkStrategy = metadata.category === 'primary'
-          ? {
-              totalLinks: 25,
-              internalPercentage: 60,
-              externalPercentage: 40,
-              maxLinksPerParagraph: 3,
-              platforms: { goplay11: 8, habet: 8, dhan7: 9 },
-            }
-          : {
-              totalLinks: 8,
-              internalPercentage: 40,
-              externalPercentage: 60,
-              maxLinksPerParagraph: 2,
-              platforms: { goplay11: 3, habet: 3, dhan7: 2 },
-            };
-
-        const backlinkManager = new BacklinkManager(defaultStrategy);
-
-        // Attempt to load sitemaps; ignore failures
-        try {
-          await backlinkManager.loadSitemapURLs('goplay11');
-          await backlinkManager.loadSitemapURLs('habet');
-          await backlinkManager.loadSitemapURLs('dhan7');
-        } catch (e) {
-          // no-op
-        }
-
-        // If blog targets a platform, pass it so backlink manager can favor that platform
-        const targetPlatform = metadata.targetPlatform as 'goplay11' | 'habet' | 'dhan7' | undefined;
-
-        // Use a mutable content variable so we can replace it
-        let content = rawContent;
-        const result = await backlinkManager.insertBacklinks(content, metadata.category === 'primary' ? 'primary' : 'cross-platform', targetPlatform);
-        content = result.content;
-        backlinks = result.backlinks;
-      } catch (e) {
-        // If backlink processing fails, proceed with original content
-        backlinks = [];
-      }
-      // Convert markdown (with backlinks inserted) to HTML
-      // `content` is defined in the try block above; fallback to rawContent if missing
-      const finalMarkdown = (typeof content !== 'undefined') ? content : rawContent;
+      // Keep blog markdown authoritative. Runtime backlink insertion can introduce
+      // unnatural anchors in headings/words, which hurts content quality signals.
+      const backlinks: any[] = [];
+      const finalMarkdown = rawContent;
       const htmlContent = await this.parseMarkdownToHTML(finalMarkdown);
 
       // Extract table of contents
@@ -342,19 +295,30 @@ ${urls}
       // Determine if link is internal or external
       const isInternal = 
         href.startsWith('/') || 
-        href.startsWith('https://ak7-apk.com') ||
+        href.startsWith('https://ak7x.games') ||
         href.includes('localhost');
       
       const className = isInternal ? 'internal-link' : 'external-link';
+      let nextAttributes = attributes;
       
       // Check if class attribute already exists
-      if (attributes.includes('class=')) {
+      if (nextAttributes.includes('class=')) {
         // Append to existing class
-        return match.replace(/class=["']([^"']*)["']/g, `class="$1 ${className}"`);
+        nextAttributes = nextAttributes.replace(/class=["']([^"']*)["']/g, `class="$1 ${className}"`);
       } else {
-        // Add new class attribute
-        return `<a href="${href}" class="${className}"${attributes}>`;
+        nextAttributes = ` class="${className}"${nextAttributes}`;
       }
+
+      if (!isInternal) {
+        if (!/\btarget=/.test(nextAttributes)) {
+          nextAttributes += ' target="_blank"';
+        }
+        if (!/\brel=/.test(nextAttributes)) {
+          nextAttributes += ' rel="noopener"';
+        }
+      }
+
+      return `<a href="${href}"${nextAttributes}>`;
     });
   }
 

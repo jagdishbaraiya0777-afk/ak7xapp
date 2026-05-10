@@ -137,15 +137,15 @@ export class BacklinkManager {
   }
 
   /**
-   * Selects internal links to Ak7xapp.com pages
+   * Selects internal links to ak7x.games pages
    * @param count - Number of internal links to select
    */
   private selectInternalLinks(count: number): Backlink[] {
     const internalPages = [
-      { url: 'https://ak7-apk.com/', platform: 'ak7' as const },
-      { url: 'https://ak7-apk.com/disclaimer', platform: 'ak7' as const },
-      { url: 'https://ak7-apk.com/privacy-policy', platform: 'ak7' as const },
-      { url: 'https://ak7-apk.com/contact', platform: 'ak7' as const },
+      { url: 'https://ak7x.games/', platform: 'ak7' as const },
+      { url: 'https://ak7x.games/disclaimer', platform: 'ak7' as const },
+      { url: 'https://ak7x.games/privacy-policy', platform: 'ak7' as const },
+      { url: 'https://ak7x.games/download', platform: 'ak7' as const },
     ];
     
     const links: Backlink[] = [];
@@ -271,11 +271,11 @@ export class BacklinkManager {
     // Platform-specific anchor texts
     const platformAnchors: Record<string, string[]> = {
       ak7: [
-        'AK7 app',
-        'EK7 game',
-        'AK7 betting platform',
-        'download AK7',
-        'AK7 features',
+        'ak7x app',
+        'ak7x game',
+        'ak7x betting platform',
+        'download ak7x',
+        'ak7x features',
       ],
       goplay11: [
         'GoPlay11 platform',

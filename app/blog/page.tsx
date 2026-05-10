@@ -7,25 +7,31 @@ import path from 'path';
 // Initialize Content Management System
 const cms = new ContentManagementSystem({
   contentDir: path.join(process.cwd(), 'content', 'blogs'),
-  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ak7-apk.com',
+  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ak7x.games',
 });
 
 /**
  * Metadata for blog listing page
  */
 export const metadata: Metadata = {
-  title: 'Blog - AK7 App | Gaming Tips, Strategies & Updates',
-  description: 'Explore comprehensive guides, betting strategies, and the latest updates about AK7 app, EK7 game, and related gaming platforms.',
-  keywords: ['ak7 app', 'ak7 betting', 'ek7 game', 'gaming blog', 'betting strategies'],
+  title: 'Blog - ak7x App | Gaming Tips, Strategy & Updates',
+  description: 'Explore guides, safety tips, and platform updates for ak7x app users. Learn about ak7x game features, setup, and responsible gameplay.',
+  keywords: ['ak7x app', 'ak7x game', 'ak7x games', 'gaming blog', 'betting strategies'],
+  alternates: {
+    canonical: 'https://ak7x.games/blog',
+  },
   openGraph: {
-    title: 'Blog - AK7 App',
-    description: 'Explore comprehensive guides, betting strategies, and the latest updates about AK7 app and EK7 game.',
+    title: 'Blog - ak7x App',
+    description: 'Explore guides, safety tips, and platform updates for ak7x app users.',
     type: 'website',
+    url: 'https://ak7x.games/blog',
+    siteName: 'ak7x App',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - AK7 App',
-    description: 'Explore comprehensive guides, betting strategies, and the latest updates about AK7 app and EK7 game.',
+    title: 'Blog - ak7x App',
+    description: 'Explore guides, safety tips, and platform updates for ak7x app users.',
   },
 };
 
@@ -50,12 +56,10 @@ export default async function BlogListingPage() {
           Back to home
         </Link>
         <Link
-          href="https://cp7.me/BYPZW8/30i50zd"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/download"
           className="inline-flex h-11 items-center justify-center rounded-full bg-blue-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
         >
-          Download APK
+          Download ak7x APK
         </Link>
       </div>
 
@@ -65,7 +69,7 @@ export default async function BlogListingPage() {
           Blog
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-          Discover expert guides, strategies, and insights about AK7 app, EK7 game, and the gaming world.
+          Discover expert guides, strategies, and insights about the ak7x app, ak7x game features, and safer mobile play.
         </p>
       </header>
 

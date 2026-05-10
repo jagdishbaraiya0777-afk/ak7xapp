@@ -46,7 +46,7 @@ export function convertToNextMetadata(tags: MetaTagsType): Metadata {
  */
 export function generateBlogMetadata(
   blog: BlogContent,
-  siteUrl: string = 'https://ak7-apk.com'
+  siteUrl: string = 'https://ak7x.games'
 ): Metadata {
   const { metadata } = blog;
   const canonical = `${siteUrl}/blog/${metadata.slug}`;
@@ -71,7 +71,8 @@ export function generateBlogMetadata(
       description: metadata.description,
       type: 'article',
       url: canonical,
-      siteName: 'Ak7xapp',
+      siteName: 'ak7x App',
+      locale: 'en_IN',
       publishedTime: metadata.publishedAt.toISOString(),
       modifiedTime: metadata.updatedAt.toISOString(),
       authors: [metadata.author],
@@ -97,25 +98,26 @@ export function generateBlogMetadata(
  * Generate metadata for blog listing page
  */
 export function generateBlogListingMetadata(
-  siteUrl: string = 'https://ak7-apk.com'
+  siteUrl: string = 'https://ak7x.games'
 ): Metadata {
   return {
-    title: 'Blog - Ak7xapp | Latest Gaming News & Guides',
-    description: 'Discover the latest gaming news, guides, and tips for Ak7 app, EK7 game, and more. Expert insights on betting strategies and gameplay.',
-    keywords: ['ak7 app', 'ek7 game', 'ak7 betting', 'gaming blog', 'betting guides'],
+    title: 'Blog - ak7x App | Latest Gaming News & Guides',
+    description: 'Discover the latest gaming news, guides, and tips for ak7x app users. Expert insights on gameplay strategy and safety.',
+    keywords: ['ak7x app', 'ak7x game', 'ak7x games', 'gaming blog', 'betting guides'],
     alternates: {
       canonical: `${siteUrl}/blog`,
     },
     openGraph: {
-      title: 'Blog - Ak7xapp',
+      title: 'Blog - ak7x App',
       description: 'Latest gaming news, guides, and tips',
       type: 'website',
       url: `${siteUrl}/blog`,
-      siteName: 'Ak7xapp',
+      siteName: 'ak7x App',
+      locale: 'en_IN',
       images: [
         {
           url: `${siteUrl}/ss1.webp`,
-          alt: 'Ak7xapp Blog',
+          alt: 'ak7x App Blog',
           width: 1200,
           height: 630,
         },
@@ -123,7 +125,7 @@ export function generateBlogListingMetadata(
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Blog - Ak7xapp',
+      title: 'Blog - ak7x App',
       description: 'Latest gaming news, guides, and tips',
       images: [`${siteUrl}/ss1.webp`],
     },

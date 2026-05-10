@@ -37,18 +37,24 @@ export interface BrandIssue {
 }
 
 export const OFFICIAL_BRANDS = {
-  EK7: 'EK7 Game',
+  ak7x: 'ak7x',
   GoPlay11: 'GoPlay11',
   Habet: 'Habet',
   Dhan7: 'Dhan7',
-  Ak7xapp: 'Ak7xapp',
 } as const;
 
 const BRAND_LOOKUP: Record<string, keyof typeof OFFICIAL_BRANDS> = {
-  ek7: 'EK7',
-  'EK 7': 'EK7',
-  'E-K-7': 'EK7',
-  'ek7 game': 'EK7',
+  ek7: 'ak7x',
+  'EK 7': 'ak7x',
+  'E-K-7': 'ak7x',
+  'ek7 game': 'ak7x',
+  ak7: 'ak7x',
+  ak7xapp: 'ak7x',
+  AK7XAPP: 'ak7x',
+  'Ak7x App': 'ak7x',
+  'ak7x app': 'ak7x',
+  'ak7x-app': 'ak7x',
+  'ak7x_app': 'ak7x',
   goplay11: 'GoPlay11',
   'GoPlay 11': 'GoPlay11',
   'Go Play11': 'GoPlay11',
@@ -64,12 +70,6 @@ const BRAND_LOOKUP: Record<string, keyof typeof OFFICIAL_BRANDS> = {
   DHAN7: 'Dhan7',
   'Dhan 7': 'Dhan7',
   'Dhan-7': 'Dhan7',
-  ak7xapp: 'Ak7xapp',
-  AK7XAPP: 'Ak7xapp',
-  'Ak7x App': 'Ak7xapp',
-  'ak7x app': 'Ak7xapp',
-  'ak7x-app': 'Ak7xapp',
-  'ak7x_app': 'Ak7xapp',
 };
 
 export class BrandConsistencyValidator {
@@ -81,7 +81,9 @@ export class BrandConsistencyValidator {
       const expectedText = OFFICIAL_BRANDS[officialKey];
       const regex =
         variant === 'ek7'
-          ? /\bEK7\b(?!\s+Game)/g
+          ? /\bek7\b/gi
+          : variant === 'ak7'
+            ? /\bak7\b/gi
           : variant === 'GoPlay 11'
             ? /\bGoPlay 11\b/g
             : variant === 'Go Play11'
@@ -117,7 +119,9 @@ export class BrandConsistencyValidator {
       const expectedText = OFFICIAL_BRANDS[officialKey];
       const regex =
         variant === 'ek7'
-          ? /\bEK7\b(?!\s+Game)/g
+          ? /\bek7\b/gi
+          : variant === 'ak7'
+            ? /\bak7\b/gi
           : variant === 'GoPlay 11'
             ? /\bGoPlay 11\b/g
             : variant === 'Go Play11'

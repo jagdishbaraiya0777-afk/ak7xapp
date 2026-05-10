@@ -11,7 +11,7 @@ export default function DisclaimerPage() {
       <main className="mx-auto max-w-6xl px-4 py-12">
         <h1 className="text-3xl font-bold">Disclaimer</h1>
         <p className="mt-4 text-white/80">
-          This website provides informational content about AK7 App and related platforms. We are not affiliated with the official app or its developers. Content is for informational purposes only and does not constitute professional advice.
+          This website provides informational content about ak7x App and related platforms. We are not affiliated with the official app or its developers. Content is for informational purposes only and does not constitute professional advice.
         </p>
 
         <section className="mt-6">
@@ -21,7 +21,7 @@ export default function DisclaimerPage() {
 
         <section className="mt-6">
           <h2 className="text-xl font-semibold">No affiliation</h2>
-          <p className="mt-2 text-white/80">We are an independent resource and not officially associated with AK7 App or any other platform mentioned.</p>
+          <p className="mt-2 text-white/80">We are an independent resource and not officially associated with ak7x App or any other platform mentioned.</p>
         </section>
 
         <div className="mt-8">

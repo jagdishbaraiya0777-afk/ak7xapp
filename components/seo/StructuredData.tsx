@@ -32,9 +32,9 @@ export function StructuredData({ schema }: StructuredDataProps) {
  */
 export function generateArticleSchema(
   blog: BlogContent,
-  siteUrl: string = 'https://ak7-apk.com',
-  organizationName: string = 'Ak7xapp',
-  logoUrl: string = 'https://ak7-apk.com/logo.png'
+  siteUrl: string = 'https://ak7x.games',
+  organizationName: string = 'ak7x App',
+  logoUrl: string = 'https://ak7x.games/icon-512.png'
 ): SchemaMarkup {
   const { metadata, content } = blog;
   
@@ -103,7 +103,7 @@ export function generateArticleSchema(
 export function generateBreadcrumbSchema(
   blogTitle: string,
   blogSlug: string,
-  siteUrl: string = 'https://ak7-apk.com'
+  siteUrl: string = 'https://ak7x.games'
 ) {
   return {
     '@context': 'https://schema.org',
@@ -135,8 +135,8 @@ export function generateBreadcrumbSchema(
  * Generate WebSite schema for the main site
  */
 export function generateWebSiteSchema(
-  siteUrl: string = 'https://ak7-apk.com',
-  siteName: string = 'Ak7xapp'
+  siteUrl: string = 'https://ak7x.games',
+  siteName: string = 'ak7x App'
 ) {
   return {
     '@context': 'https://schema.org',
@@ -158,9 +158,9 @@ export function generateWebSiteSchema(
  * Generate Organization schema
  */
 export function generateOrganizationSchema(
-  siteUrl: string = 'https://ak7-apk.com',
-  organizationName: string = 'Ak7xapp',
-  logoUrl: string = 'https://ak7-apk.com/logo.png'
+  siteUrl: string = 'https://ak7x.games',
+  organizationName: string = 'ak7x App',
+  logoUrl: string = 'https://ak7x.games/icon-512.png'
 ) {
   return {
     '@context': 'https://schema.org',

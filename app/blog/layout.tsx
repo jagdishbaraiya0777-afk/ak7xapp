@@ -35,8 +35,8 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto max-w-6xl px-4 py-12">
           <div className="grid gap-8 md:grid-cols-3">
             <div>
-              <h3 className="mb-4 text-lg font-semibold text-white">About AK7 App</h3>
-              <p className="text-sm text-white/70">Your resource for AK7 app guides, EK7 game strategies, and gaming insights.</p>
+              <h3 className="mb-4 text-lg font-semibold text-white">About ak7x App</h3>
+              <p className="text-sm text-white/70">Your resource for ak7x app guides, ak7x game strategy, and mobile gaming insights.</p>
             </div>
 
             <div>
@@ -67,7 +67,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
           </div>
 
           <div className="mt-8 border-t border-white/6 pt-8 text-center">
-            <p className="text-sm text-white/60">© {new Date().getFullYear()} AK7 App. All rights reserved.</p>
+            <p className="text-sm text-white/60">© {new Date().getFullYear()} ak7x App. All rights reserved.</p>
           </div>
         </div>
       </footer>

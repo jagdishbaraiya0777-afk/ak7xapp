@@ -123,7 +123,7 @@ export function belongsToPlatform(
     goplay11: ['goplay11.com', 'www.goplay11.com'],
     habet: ['habet.com', 'www.habet.com'],
     dhan7: ['dhan7.com', 'www.dhan7.com'],
-    ak7: ['ak7-apk.com', 'www.ak7-apk.com', 'ak7xapp.com', 'www.ak7xapp.com'],
+    ak7: ['ak7x.games', 'www.ak7x.games', 'ak7-apk.com', 'www.ak7-apk.com'],
   };
   
   const domains = platformDomains[platform] || [];

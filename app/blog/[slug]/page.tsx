@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ContentManagementSystem } from '@/lib/blog/parser';
+import { BlogSchema } from '@/components/BlogSchema';
 import path from 'path';
 
 // Initialize Content Management System
 const cms = new ContentManagementSystem({
   contentDir: path.join(process.cwd(), 'content', 'blogs'),
-  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ak7-apk.com',
+  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ak7x.games',
 });
 
 /**
@@ -43,36 +44,43 @@ export async function generateMetadata({
   }
 
   const { metadata } = blog;
+  const canonical = `https://ak7x.games/blog/${metadata.slug}`;
+  const featuredImage = metadata.featuredImage
+    ? metadata.featuredImage.startsWith('http')
+      ? metadata.featuredImage
+      : `https://ak7x.games${metadata.featuredImage}`
+    : 'https://ak7x.games/ss1.webp';
 
   return {
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
     authors: [{ name: metadata.author }],
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: metadata.title,
       description: metadata.description,
       type: 'article',
+      url: canonical,
+      siteName: 'ak7x App',
+      locale: 'en_IN',
       publishedTime: metadata.publishedAt.toISOString(),
       modifiedTime: metadata.updatedAt.toISOString(),
       authors: [metadata.author],
-      images: metadata.featuredImage
-        ? [
-            {
-              url: metadata.featuredImage,
-              alt: metadata.title,
-            },
-          ]
-        : [],
+      images: [
+        {
+          url: featuredImage,
+          alt: metadata.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: metadata.title,
       description: metadata.description,
-      images: metadata.featuredImage ? [metadata.featuredImage] : [],
-    },
-    alternates: {
-      canonical: `/blog/${metadata.slug}`,
+      images: [featuredImage],
     },
   };
 }
@@ -98,6 +106,14 @@ export default async function BlogPostPage({
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-12">
+      <BlogSchema
+        title={metadata.title}
+        description={metadata.description}
+        slug={metadata.slug}
+        datePublished={metadata.publishedAt.toISOString()}
+        dateModified={metadata.updatedAt.toISOString()}
+        authorName={metadata.author}
+      />
       {/* Article Header */}
       <header className="mb-8">
         <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -169,7 +185,7 @@ export default async function BlogPostPage({
           <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">🔗 Related Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {blog.backlinks.map((link: any) => {
-              const isInternal = link.url.includes('ak7-apk.com') || link.url.startsWith('/');
+              const isInternal = link.url.includes('ak7x.games') || link.url.startsWith('/');
               const isGoPlay11 = link.url.includes('goplay11');
               const isHabet = link.url.includes('habet');
               const isDhan7 = link.url.includes('dhan7');
@@ -207,7 +223,7 @@ export default async function BlogPostPage({
                     href={link.url}
                     className="text-sm font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 break-words"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                   >
                     <span className="mr-2">{platformIcon}</span>
                     {link.anchorText || link.url}
@@ -240,6 +256,27 @@ export default async function BlogPostPage({
           })}
         </p>
       </footer>
+
+      <aside aria-label="Related platforms" className="mt-8 rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-white/80">
+        <p>
+          <strong>Our platforms:</strong>{' '}
+          <a href="https://ak7-apk.com/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+            ak7 APK
+          </a>{' '}
+          ·{' '}
+          <a href="https://goplay11-apk.com/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+            GoPlay11 Fantasy App
+          </a>{' '}
+          ·{' '}
+          <a href="https://habetapk.com/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+            Habet App
+          </a>{' '}
+          ·{' '}
+          <a href="https://www.dhan7.xyz/" target="_blank" rel="noopener" className="text-amber-300 hover:text-amber-200">
+            Dhan7
+          </a>
+        </p>
+      </aside>
     </article>
   );
 }

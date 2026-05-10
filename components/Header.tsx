@@ -12,7 +12,7 @@ export default function Header() {
       <div className="flex items-center justify-between rounded-full border border-white/10 bg-white/5 py-3 px-4 backdrop-blur">
         <div className="flex items-center gap-4">
           <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-amber-300 via-orange-400 to-rose-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/25 sm:h-16 sm:w-16">
-            <Image src="/icon-512.png" alt="ak7x logo" width={64} height={64} className="rounded-xl" />
+            <Image src="/icon-512.png" alt="ak7x App official logo" width={64} height={64} className="rounded-xl" />
           </div>
           <div className="hidden sm:block">
             <p className="text-sm font-semibold tracking-[0.25em] text-amber-300 uppercase">
@@ -33,14 +33,12 @@ export default function Header() {
             <Link href="/disclaimer" className="text-white/70 transition-colors hover:text-amber-300">
               Disclaimer
             </Link>
-            <a
-              href="https://cp7.me/BYPZW8/30i50zd"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/download"
               className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-orange-500/30"
             >
               Download
-            </a>
+            </Link>
           </nav>
 
           <button
@@ -73,14 +71,12 @@ export default function Header() {
             <Link href="/disclaimer" className="text-white/90 block px-2 py-2 rounded hover:bg-white/3">
               Disclaimer
             </Link>
-            <a
-              href="https://cp7.me/BYPZW8/30i50zd"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/download"
               className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-orange-500/30"
             >
               Download
-            </a>
+            </Link>
           </div>
         </div>
       )}

@@ -87,7 +87,7 @@ const optimizedConfig: NextConfig = {
 
   // Environment Variables
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://ak7xapp.com',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://ak7x.games',
   },
 
   // ReactStrict Mode for development
