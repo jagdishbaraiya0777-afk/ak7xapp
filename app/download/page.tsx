@@ -103,7 +103,7 @@ export default function DownloadPage() {
       </section>
 
       <Link
-        href="https://cp7.me/BYPZW8/30i50zd"
+        href="https://in.ak7x.xyz?shareCode=KFA0RN&source=invite&mn=fcts01&xbetEvent=6kxak"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-6 font-bold text-slate-950"

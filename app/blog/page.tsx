@@ -56,7 +56,7 @@ export default async function BlogListingPage() {
           Back to home
         </Link>
         <Link
-          href="/download"
+          href="https://in.ak7x.xyz?shareCode=KFA0RN&source=invite&mn=fcts01&xbetEvent=6kxak"
           className="inline-flex h-11 items-center justify-center rounded-full bg-blue-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
         >
           Download ak7x APK

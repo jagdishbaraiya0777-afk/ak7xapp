@@ -34,7 +34,7 @@ export default function Header() {
               Disclaimer
             </Link>
             <Link
-              href="/download"
+              href="https://in.ak7x.xyz?shareCode=KFA0RN&source=invite&mn=fcts01&xbetEvent=6kxak"
               className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-orange-500/30"
             >
               Download
@@ -72,7 +72,7 @@ export default function Header() {
               Disclaimer
             </Link>
             <Link
-              href="/download"
+              href="https://in.ak7x.xyz?shareCode=KFA0RN&source=invite&mn=fcts01&xbetEvent=6kxak"
               className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-orange-500/30"
             >
               Download

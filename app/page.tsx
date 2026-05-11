@@ -75,7 +75,7 @@ export default function Home() {
                   className="h-72 w-72 rounded-[2.5rem] border border-white/10 bg-white/5 p-3 shadow-2xl shadow-black/30 sm:h-80 sm:w-80 md:h-96 md:w-96"
                 />
                 <Link
-                  href="/download"
+                  href="https://in.ak7x.xyz?shareCode=KFA0RN&source=invite&mn=fcts01&xbetEvent=6kxak"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-linear-to-r from-amber-300 via-orange-400 to-rose-500 px-6 text-sm font-bold text-slate-950 shadow-lg shadow-orange-500/30 transition-transform hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/40"
                 >
                   Download ak7x APK
